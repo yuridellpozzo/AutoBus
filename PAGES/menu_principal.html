@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Menu Principal</title>
+  </head>
+
+  <body class="bg-gray-900 text-white">
+    <!-- Cabeçalho -->
+    <header class="bg-black py-4 px-6 flex justify-between items-center">
+      <nav class="flex gap-6">
+        <a
+          href="/PAGES/menu_principal.html"
+          class="text-yellow-400 hover:text-yellow-500 font-bold"
+          >Início</a
+        >
+        <a href="#" class="text-yellow-400 hover:text-yellow-500 font-bold"
+          >Opções</a
+        >
+        <a href="#" class="text-yellow-400 hover:text-yellow-500 font-bold"
+          >Suporte</a
+        >
+      </nav>
+      <div class="relative">
+        <!-- Área do Perfil -->
+        <div class="relative">
+          <div
+            class="flex items-center gap-2 cursor-pointer"
+            id="profile-toggle"
+          >
+            <span>Perfil</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 text-yellow-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zM12 14c-4.42 0-8 1.79-8 4v2h16v-2c0-2.21-3.58-4-8-4z"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- Dropdown -->
+          <div
+            id="profile-dropdown"
+            class="absolute right-0 mt-2 w-48 bg-gray-800 text-white rounded-lg shadow-lg hidden"
+          >
+            <div class="p-4 border-b border-gray-700">
+              <p class="font-bold">Usuário: João Silva</p>
+              <p class="text-sm text-gray-400">Atendente</p>
+            </div>
+            <button
+              onclick="window.location.href='/PAGES/login.html'"
+              class="w-full text-left px-4 py-2 text-yellow-400 hover:bg-gray-700 hover:text-yellow-500"
+            >
+              Sair
+            </button>
+          </div>
+        </div>
+
+        <script>
+          const profileToggle = document.getElementById("profile-toggle");
+          const profileDropdown = document.getElementById("profile-dropdown");
+
+          // Alterna a visibilidade do menu suspenso ao clicar no botão "Perfil"
+          profileToggle.addEventListener("click", () => {
+            profileDropdown.classList.toggle("hidden");
+          });
+
+          // Fecha o menu suspenso ao clicar fora dele
+          document.addEventListener("click", (event) => {
+            if (
+              !profileToggle.contains(event.target) &&
+              !profileDropdown.contains(event.target)
+            ) {
+              profileDropdown.classList.add("hidden");
+            }
+          });
+        </script>
+      </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex justify-center items-center min-h-screen">
+      <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-4xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <!-- Campo De -->
+          <div class="flex flex-col">
+            <label for="from" class="text-sm font-medium mb-1">De</label>
+            <div
+              class="flex items-center border border-yellow-400 rounded-lg px-3 py-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-yellow-400 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                ></path>
+              </svg>
+              <input
+                type="text"
+                id="from"
+                value="Cuiabá"
+                class="bg-transparent text-white focus:outline-none w-full"
+              />
+            </div>
+          </div>
+
+          <!-- Campo Para -->
+          <div class="flex flex-col">
+            <label for="to" class="text-sm font-medium mb-1">Para</label>
+            <div
+              class="flex items-center border border-yellow-400 rounded-lg px-3 py-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-yellow-400 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
+                ></path>
+              </svg>
+              <input
+                type="text"
+                id="to"
+                placeholder="Destino"
+                class="bg-transparent text-white focus:outline-none w-full"
+              />
+            </div>
+          </div>
+
+          <!-- Campo Data Ida -->
+          <div class="flex flex-col">
+            <label for="departure-date" class="text-sm font-medium mb-1"
+              >Data Ida</label
+            >
+            <input
+              type="text"
+              id="departure-date"
+              class="border border-yellow-400 rounded-lg px-3 py-2 bg-transparent text-white focus:outline-none"
+              placeholder="Selecione a data"
+            />
+          </div>
+
+          <!-- Campo Retorno -->
+          <div class="flex flex-col">
+            <label for="return-date" class="text-sm font-medium mb-1"
+              >Retorno</label
+            >
+            <input
+              type="text"
+              id="return-date"
+              class="border border-yellow-400 rounded-lg px-3 py-2 bg-transparent text-white focus:outline-none"
+              placeholder="Selecione a data"
+              disabled
+            />
+          </div>
+
+          <!-- Campo Viajante -->
+          <div class="flex flex-col">
+            <label for="traveler" class="text-sm font-medium mb-1"
+              >Viajante</label
+            >
+            <div class="relative">
+              <button
+                id="traveler-toggle"
+                class="w-full border border-yellow-400 rounded-lg px-3 py-2 bg-transparent text-white text-left focus:outline-none flex justify-between items-center"
+              >
+                <span id="selected-traveler">Menu Viajante</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-yellow-400"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="traveler-menu"
+                class="absolute w-full bg-gray-800 text-white rounded-lg shadow-lg mt-2 hidden"
+              >
+                <button
+                  class="w-full text-left px-4 py-2 hover:bg-gray-700"
+                  data-value="Adulto"
+                >
+                  Adulto
+                </button>
+                <button
+                  class="w-full text-left px-4 py-2 hover:bg-gray-700"
+                  data-value="Jovem"
+                >
+                  Jovem
+                </button>
+                <button
+                  class="w-full text-left px-4 py-2 hover:bg-gray-700"
+                  data-value="Idoso"
+                >
+                  Idoso
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              // Declaração de variáveis
+              const travelerToggle = document.getElementById("traveler-toggle");
+              const travelerMenu = document.getElementById("traveler-menu");
+              const selectedTraveler =
+                document.getElementById("selected-traveler");
+              const documentModal = document.getElementById("document-modal");
+              const documentUpload = document.getElementById("document-upload");
+              const fileName = document.getElementById("file-name");
+              const cancelDocument = document.getElementById("cancel-document");
+              const saveDocument = document.getElementById("save-document");
+
+              // Alterna a visibilidade do menu ao clicar no botão
+              travelerToggle.addEventListener("click", () => {
+                travelerMenu.classList.toggle("hidden");
+              });
+
+              // Atualiza o texto selecionado ao clicar em uma opção
+              travelerMenu.addEventListener("click", (event) => {
+                if (event.target.hasAttribute("data-value")) {
+                  const selectedValue = event.target.getAttribute("data-value");
+                  selectedTraveler.textContent = selectedValue;
+                  travelerMenu.classList.add("hidden"); // Fecha o menu após a seleção
+
+                  // Abre o modal se a opção "Jovem" for selecionada
+                  if (selectedValue === "Jovem") {
+                    documentModal.classList.remove("hidden");
+                  }
+                }
+              });
+
+              // Fecha o modal ao clicar no botão "Cancelar"
+              cancelDocument.addEventListener("click", () => {
+                documentModal.classList.add("hidden");
+                documentUpload.value = ""; // Limpa o campo de upload
+                fileName.textContent = ""; // Limpa o nome do arquivo
+              });
+
+              // Exibe o nome do arquivo selecionado
+              documentUpload.addEventListener("change", () => {
+                if (documentUpload.files.length > 0) {
+                  fileName.textContent = `Arquivo: ${documentUpload.files[0].name}`;
+                }
+              });
+
+              // Salva o documento e fecha o modal
+              saveDocument.addEventListener("click", () => {
+                if (documentUpload.files.length > 0) {
+                  alert("Documento salvo com sucesso!");
+                  documentModal.classList.add("hidden");
+                } else {
+                  alert("Por favor, envie um documento antes de salvar.");
+                }
+              });
+
+              // Fecha o menu ao clicar fora dele
+              document.addEventListener("click", (event) => {
+                if (
+                  !travelerToggle.contains(event.target) &&
+                  !travelerMenu.contains(event.target)
+                ) {
+                  travelerMenu.classList.add("hidden");
+                }
+              });
+            });
+          </script>
+        </div>
+
+        <!-- Toggle e Botão -->
+        <div class="flex items-center justify-between mt-4">
+          <div class="flex items-center gap-4">
+            <span class="text-sm font-medium text-white">Com Retorno?</span>
+            <div
+              id="toggle-container"
+              class="toggle-bg w-10 h-6 bg-gray-700 rounded-full flex items-center p-1 cursor-pointer transition-colors duration-300"
+            >
+              <div
+                class="toggle-circle w-4 h-4 bg-yellow-400 rounded-full transition-transform duration-300 transform"
+              ></div>
+            </div>
+          </div>
+          <button
+            class="buscar bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-6 rounded-lg flex items-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 16l4-4 4 4m0 0l-4-4m4 4H4"
+              ></path>
+            </svg>
+            Buscar
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Calendário Customizado -->
+    <div
+      id="calendar-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-gray-800 rounded-lg shadow-lg p-6 w-80">
+        <h2
+          id="calendar-title"
+          class="text-lg font-bold text-center text-white mb-4"
+        >
+          Calendário
+        </h2>
+        <div class="flex justify-between items-center mb-4">
+          <button id="prev-month" class="text-yellow-400 hover:text-yellow-500">
+            &lt;
+          </button>
+          <div class="flex items-center gap-2">
+            <select
+              id="month-select"
+              class="bg-gray-700 text-white rounded px-2 py-1"
+            >
+              <option value="0">Jan</option>
+              <option value="1">Feb</option>
+              <option value="2">Mar</option>
+              <option value="3">Apr</option>
+              <option value="4">May</option>
+              <option value="5">Jun</option>
+              <option value="6">Jul</option>
+              <option value="7">Aug</option>
+              <option value="8">Sep</option>
+              <option value="9">Oct</option>
+              <option value="10">Nov</option>
+              <option value="11">Dec</option>
+            </select>
+            <input
+              id="year-input"
+              type="number"
+              class="bg-gray-700 text-white rounded px-2 py-1 w-16"
+              value="2025"
+            />
+          </div>
+          <button id="next-month" class="text-yellow-400 hover:text-yellow-500">
+            &gt;
+          </button>
+        </div>
+        <table class="w-full text-center text-white">
+          <thead>
+            <tr>
+              <th>Dom</th>
+              <th>Seg</th>
+              <th>Ter</th>
+              <th>Qua</th>
+              <th>Qui</th>
+              <th>Sex</th>
+              <th>Sáb</th>
+            </tr>
+          </thead>
+          <tbody id="calendar-body"></tbody>
+        </table>
+        <div class="flex justify-between mt-4">
+          <button
+            id="clear-calendar"
+            class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+          >
+            Limpar
+          </button>
+          <button
+            id="apply-calendar"
+            class="bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600"
+          >
+            Aplicar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleContainer = document.getElementById("toggle-container");
+        const toggleCircle = document.querySelector(".toggle-circle");
+        const returnDateField = document.getElementById("return-date");
+        const calendarModal = document.getElementById("calendar-modal");
+        const calendarBody = document.getElementById("calendar-body");
+        const monthSelect = document.getElementById("month-select");
+        const yearInput = document.getElementById("year-input");
+        const departureDate = document.getElementById("departure-date");
+        const inputTo = document.getElementById("to")
+        const buscarButton = document.querySelector(".buscar");
+        let isToggleOn = false; // Estado inicial do toggle
+        let selectedDateField = null;
+        
+        // Adiciona evento de clique no botão "Buscar"
+        buscarButton.addEventListener("click", () => {
+         window.location.href = '/PAGES/horarios.html';
+        });
+
+        inputTo.addEventListener("click", () => {
+          window.location.href = '/PAGES/destinos.html';  
+        });
+
+        // Adiciona evento de clique no toggle visual
+        toggleContainer.addEventListener("click", () => {
+          isToggleOn = !isToggleOn; // Alterna o estado do toggle
+          updateToggleState();
+        });
+
+        // Atualiza o estado do toggle e do campo de retorno
+        function updateToggleState() {
+          if (isToggleOn) {
+            toggleContainer.classList.replace("bg-gray-700", "bg-yellow-500"); // Muda a cor de fundo
+            toggleCircle.classList.add("translate-x-4"); // Move o círculo para a direita
+            returnDateField.disabled = false; // Habilita o campo de data de retorno
+          } else {
+            toggleContainer.classList.replace("bg-yellow-500", "bg-gray-700"); // Volta a cor de fundo
+            toggleCircle.classList.remove("translate-x-4"); // Move o círculo para a esquerda
+            returnDateField.disabled = true; // Desabilita o campo de data de retorno
+            returnDateField.value = ""; // Limpa o valor do campo
+          }
+        }
+
+        // Função para abrir o calendário
+        function openCalendar(field) {
+          selectedDateField = field;
+          calendarModal.classList.remove("hidden");
+          generateCalendar();
+        }
+
+        // Função para fechar o calendário
+        function closeCalendar() {
+          calendarModal.classList.add("hidden");
+        }
+
+        // Função para gerar o calendário
+        function generateCalendar() {
+          const month = parseInt(monthSelect.value);
+          const year = parseInt(yearInput.value);
+          const firstDay = new Date(year, month, 1).getDay();
+          const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+          calendarBody.innerHTML = "";
+          let row = document.createElement("tr");
+
+          // Preenche os dias vazios antes do primeiro dia do mês
+          for (let i = 0; i < firstDay; i++) {
+            const cell = document.createElement("td");
+            row.appendChild(cell);
+          }
+
+          // Preenche os dias do mês
+          for (let day = 1; day <= daysInMonth; day++) {
+            if (row.children.length === 7) {
+              calendarBody.appendChild(row);
+              row = document.createElement("tr");
+            }
+
+            const cell = document.createElement("td");
+            cell.textContent = day;
+            cell.classList.add(
+              "cursor-pointer",
+              "hover:bg-yellow-500",
+              "rounded"
+            );
+            cell.addEventListener("click", () => {
+              const formattedDate = `${year}-${String(month + 1).padStart(
+                2,
+                "0"
+              )}-${String(day).padStart(2, "0")}`;
+              selectedDateField.value = formattedDate;
+              closeCalendar();
+            });
+            row.appendChild(cell);
+          }
+
+          // Preenche os dias vazios após o último dia do mês
+          while (row.children.length < 7) {
+            const cell = document.createElement("td");
+            row.appendChild(cell);
+          }
+
+          calendarBody.appendChild(row);
+        }
+
+        // Eventos para navegação no calendário
+        document.getElementById("prev-month").addEventListener("click", () => {
+          if (monthSelect.value > 0) {
+            monthSelect.value--;
+          } else {
+            monthSelect.value = 11;
+            yearInput.value--;
+          }
+          generateCalendar();
+        });
+
+        document.getElementById("next-month").addEventListener("click", () => {
+          if (monthSelect.value < 11) {
+            monthSelect.value++;
+          } else {
+            monthSelect.value = 0;
+            yearInput.value++;
+          }
+          generateCalendar();
+        });
+
+        monthSelect.addEventListener("change", generateCalendar);
+        yearInput.addEventListener("change", generateCalendar);
+
+        // Vincula o calendário aos campos de data
+        departureDate.addEventListener("focus", () =>
+          openCalendar(departureDate)
+        );
+        returnDateField.addEventListener("focus", () => {
+          if (!returnDateField.disabled) {
+            openCalendar(returnDateField);
+          }
+        });
+
+        // Atualiza o estado inicial do toggle
+        updateToggleState();
+
+        // Botão "Limpar"
+        document
+          .getElementById("clear-calendar")
+          .addEventListener("click", () => {
+            if (selectedDateField) {
+              selectedDateField.value = ""; // Limpa o campo de data associado
+            }
+            closeCalendar(); // Fecha o calendário
+          });
+
+        // Botão "Aplicar"
+        document
+          .getElementById("apply-calendar")
+          .addEventListener("click", () => {
+            if (selectedDateField && selectedDateField.value) {
+              // Valida a data selecionada (já preenchida ao clicar em um dia)
+              closeCalendar(); // Fecha o calendário
+            } else {
+              alert("Por favor, selecione uma data antes de aplicar."); // Mensagem de validação
+            }
+          });
+      });
+    </script>
+
+    <!-- Modal de Envio de Documento -->
+    <div
+      id="document-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="bg-gray-800 rounded-lg shadow-lg p-6 w-96">
+        <h2 class="text-lg font-bold text-center text-yellow-400 mb-4">
+          Enviar Documentos
+        </h2>
+        <p class="text-white text-center mb-4">
+          Envie o documento de autorização dos pais.
+        </p>
+        <div class="flex flex-col items-center">
+          <label
+            for="document-upload"
+            class="cursor-pointer bg-yellow-500 text-black px-4 py-2 rounded-lg hover:bg-yellow-600"
+          >
+            Enviar PDF
+          </label>
+          <input
+            id="document-upload"
+            type="file"
+            accept=".pdf"
+            class="hidden"
+          />
+          <p id="file-name" class="text-sm text-gray-400 mt-2"></p>
+        </div>
+        <div class="flex justify-between mt-6">
+          <button
+            id="cancel-document"
+            class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600"
+          >
+            Cancelar
+          </button>
+          <button
+            id="save-document"
+            class="bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600"
+          >
+            Salvar
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

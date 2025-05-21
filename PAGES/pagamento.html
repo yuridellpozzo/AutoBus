@@ -1,0 +1,251 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Escolha a Forma de Pagamento
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&amp;display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        
+    </style>
+</head>
+
+<body class="bg-[#000000] text-white min-h-screen flex flex-col justify-between">
+    <h1 class="text-[4rem] font-normal text-center mt-10 px-4 leading-tight">
+        ESCOLHA A FORMA DE PAGAMENTO
+    </h1>
+    <main class="flex justify-center px-4 my-10">
+        <section class="bg-white rounded-[40px] max-w-5xl w-full p-8 md:p-10 space-y-6">
+            <!-- Payment method tabs -->
+            <nav class="flex space-x-4">
+                <button aria-current="true"
+                    class="flex flex-col items-center justify-center border border-sky-400 rounded-md bg-sky-200 text-[#0a1a4f] w-[140px] h-[80px] text-sm leading-tight"
+                    id="btn-credit-card" type="button">
+                    <i class="fas fa-credit-card text-xl mb-2">
+                    </i>
+                    Cartão de crédito
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center border border-gray-200 rounded-md text-[#0a1a4f] w-[140px] h-[80px] text-sm leading-tight"
+                    id="btn-pix" type="button">
+                    <svg class="w-6 h-6 mb-2" fill="#0a1a4f" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L9 5H6L3 8v8l3 3h3l3 3 3-3h3l3-3V8l-3-3h-3l-3-3zM9 7h6v10H9V7z">
+                        </path>
+                    </svg>
+                    Pix
+                </button>
+                <button
+                    class="flex flex-col items-center justify-center border border-gray-200 rounded-md text-[#0a1a4f] w-[140px] h-[80px] text-sm leading-tight"
+                    id="btn-boleto" type="button">
+                    <svg class="w-6 h-6 mb-2" fill="#0a1a4f" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <rect height="10" width="12" x="6" y="7">
+                        </rect>
+                        <path d="M7 9h2v6H7zM11 9h2v6h-2zM15 9h2v6h-2z">
+                        </path>
+                    </svg>
+                    Boleto
+                </button>
+            </nav>
+            <!-- Payment content -->
+            <div id="payment-content">
+                <!-- Cartão de crédito content -->
+                <form class="space-y-4" id="credit-card-form">
+                    <div class="flex flex-wrap gap-3">
+                        <input class="border border-gray-300 rounded-md px-3 py-2 text-gray-500 flex-grow min-w-[180px]"
+                            placeholder="Número do cartão" type="text" />
+                        <input class="border border-gray-300 rounded-md px-3 py-2 text-gray-500 flex-grow min-w-[220px]"
+                            placeholder="Nome do titular do cartão" type="text" />
+                        <input class="border border-gray-300 rounded-md px-3 py-2 text-gray-500 w-[90px]"
+                            placeholder="Validade" type="text" />
+                        <input class="border border-gray-300 rounded-md px-3 py-2 text-gray-500 w-[90px] relative pr-12"
+                            placeholder="CVV" type="text" />
+                        <img alt="Ícone de cartão de crédito cinza com símbolo de CVV em vermelho"
+                            class="absolute right-[90px] top-[102px] w-[40px] h-[30px]" height="30"
+                            src="https://storage.googleapis.com/a1aa/image/c2170db9-f094-43c2-a708-b42daf663c71.jpg"
+                            style="pointer-events:none" width="40" />
+                    </div>
+                    <div class="flex flex-wrap gap-3 items-center">
+                        <input class="border border-gray-300 rounded-md px-3 py-2 text-gray-500 w-[180px]"
+                            placeholder="CPF" type="text" />
+                        <input class="border border-gray-300 rounded-md px-3 py-2 text-gray-500 w-[220px]"
+                            placeholder="Data de nascimento" type="date" />
+                        <input class="border border-gray-300 rounded-md px-3 py-2 text-gray-500 w-[180px]"
+                            placeholder="Telefone" type="tel" />
+                        <div class="relative w-[280px]">
+                            <label class="absolute -top-4 left-2 text-xs text-gray-400" for="email">
+                                Email
+                            </label>
+                            <input
+                                class="border border-[#0a1a4f] rounded-md px-3 py-2 text-[#0a1a4f] font-semibold w-full"
+                                id="email" type="email" value="seuemail@buson.com.br" />
+                        </div>
+                    </div>
+                    <!-- Bottom row -->
+                    <div class="flex flex-wrap items-center gap-4 mt-6">
+                        <div class="relative inline-block">
+                            <select
+                                class="appearance-none bg-gray-100 text-sky-600 font-semibold px-4 py-3 rounded-md pr-10 cursor-pointer">
+                                <option>
+                                    1x R$ 85,23
+                                </option>
+                                <option>
+                                    2x R$ 42,62
+                                </option>
+                                <option>
+                                    3x R$ 28,41
+                                </option>
+                                <option>
+                                    4x R$ 21,31
+                                </option>
+                                <option>
+                                    5x R$ 17,05
+                                </option>
+                                <option>
+                                    6x R$ 14,21
+                                </option>
+                                <option>
+                                    7x R$ 12,18
+                                </option>
+                                <option>
+                                    8x R$ 10,65
+                                </option>
+                                <option>
+                                    9x R$ 9,47
+                                </option>
+                                <option>
+                                    10x R$ 8,52
+                                </option>
+                                <option>
+                                    11x R$ 7,75
+                                </option>
+                                <option>
+                                    12x R$ 7,10
+                                </option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                                <i class="fas fa-chevron-down text-sky-600">
+                                </i>
+                            </div>
+                            <div class="absolute top-1/2 -right-[110px] -translate-y-1/2 bg-sky-300 text-[#0a1a4f] rounded-md px-4 py-3 text-xs font-semibold leading-tight"
+                                style="clip-path: polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 50%);">
+                                Que tal parcelar em
+                                <br />
+                                <strong>
+                                    12x de R$ 7,10?
+                                </strong>
+                            </div>
+                        </div>
+                        <label class="flex items-center space-x-2 text-gray-600 text-sm">
+                            <input class="w-5 h-5 border border-gray-400 rounded" type="checkbox" />
+                            <span>
+                                Guardar informações para compras futuras
+                            </span>
+                        </label>
+                    </div>
+                </form>
+                <!-- Pix content -->
+                <form class="hidden space-y-4" id="pix-form">
+                    <div class="flex flex-col items-center space-y-4">
+                        <img alt="Imagem ilustrativa de QR code para pagamento Pix" class="w-48 h-48" height="192"
+                            src="https://storage.googleapis.com/a1aa/image/3fb7d3f4-b03c-47d0-2fbf-e8b93e93156c.jpg"
+                            width="192" />
+                        <p class="text-[#0a1a4f] font-semibold text-lg text-center max-w-md">
+                            Use seu aplicativo bancário para escanear o QR code e realizar o pagamento via Pix.
+                        </p>
+                        <label class="w-full max-w-md">
+                            <span class="block mb-1 text-gray-500">
+                                Chave Pix
+                            </span>
+                            <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700"
+                                placeholder="Digite sua chave Pix" type="text" />
+                        </label>
+                    </div>
+                </form>
+                <!-- Boleto content -->
+                <form class="hidden space-y-4" id="boleto-form">
+                    <div class="flex flex-col items-center space-y-4">
+                        <img alt="Imagem ilustrativa de boleto bancário" class="w-64 h-24" height="96"
+                            src="https://storage.googleapis.com/a1aa/image/af64d139-c300-47ae-f0eb-11636dd9da80.jpg"
+                            width="256" />
+                        <p class="text-[#0a1a4f] font-semibold text-lg text-center max-w-md">
+                            Imprima o boleto e pague em qualquer banco, lotérica ou pelo internet banking.
+                        </p>
+                        <label class="w-full max-w-md">
+                            <span class="block mb-1 text-gray-500">
+                                CPF do pagador
+                            </span>
+                            <input class="w-full border border-gray-300 rounded-md px-3 py-2 text-gray-700"
+                                placeholder="Digite seu CPF" type="text" />
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="flex justify-between max-w-5xl mx-auto px-4 mb-10 w-full">
+        <a href="/PAGES/dadospassageiro.html">
+            <button
+                class="bg-yellow-400 text-black font-extrabold text-lg rounded-md px-8 py-3 flex items-center space-x-3 max-w-[250px] w-full justify-center">
+                <i class="fas fa-arrow-left text-xl">
+                </i>
+                <span>
+                    VOLTAR
+                </span>
+            </button>
+        </a>
+
+        <a href="/PAGES/comprarealizada.html">
+            <button class="bg-yellow-400 text-black font-extrabold text-lg rounded-md px-8 py-3 max-w-[250px] w-full">
+                COMPRAR
+            </button>
+        </a>
+
+
+
+    </footer>
+    <script>
+        const btnCreditCard = document.getElementById('btn-credit-card');
+        const btnPix = document.getElementById('btn-pix');
+        const btnBoleto = document.getElementById('btn-boleto');
+
+        const creditCardForm = document.getElementById('credit-card-form');
+        const pixForm = document.getElementById('pix-form');
+        const boletoForm = document.getElementById('boleto-form');
+
+        const buttons = [btnCreditCard, btnPix, btnBoleto];
+        const forms = [creditCardForm, pixForm, boletoForm];
+
+        function setActive(index) {
+            buttons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.classList.add('border-sky-400', 'bg-sky-200', 'text-[#0a1a4f]');
+                    btn.classList.remove('border-gray-200', 'text-[#0a1a4f]');
+                    btn.setAttribute('aria-current', 'true');
+                } else {
+                    btn.classList.remove('border-sky-400', 'bg-sky-200', 'text-[#0a1a4f]');
+                    btn.classList.add('border-gray-200', 'text-[#0a1a4f]');
+                    btn.removeAttribute('aria-current');
+                }
+            });
+
+            forms.forEach((form, i) => {
+                if (i === index) {
+                    form.classList.remove('hidden');
+                } else {
+                    form.classList.add('hidden');
+                }
+            });
+        }
+
+        btnCreditCard.addEventListener('click', () => setActive(0));
+        btnPix.addEventListener('click', () => setActive(1));
+        btnBoleto.addEventListener('click', () => setActive(2));
+    </script>
+</body>
+
+</html>

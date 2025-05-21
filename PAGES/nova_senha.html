@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/CSS/nova_senha.css">
+  <title>Nova Senha</title>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+  <div class="relative bg-gray-800 rounded-lg shadow-lg p-8 w-full max-w-md">
+    <!-- Botão de Voltar -->
+    <a href="/PAGES/recuperar_senha.html" class="absolute top-4 left-4 text-yellow-400 hover:text-yellow-500">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+
+    <!-- Título -->
+    <h1 class="text-2xl font-bold text-center mb-6">NOVA SENHA</h1>
+
+    <!-- Formulário -->
+    <form class="space-y-4">
+      <!-- Campo de Nova Senha -->
+      <div>
+        <label for="new-password" class="block text-sm font-medium mb-1">Insira a Nova Senha</label>
+        <input type="password" id="new-password" placeholder="Digite a Nova Senha" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400">
+      </div>
+
+      <!-- Campo de Confirmação de Senha -->
+      <div>
+        <label for="confirm-password" class="block text-sm font-medium mb-1">Digite a senha Novamente</label>
+        <input type="password" id="confirm-password" placeholder="Validar Senha" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400">
+      </div>
+
+      <!-- Botão Confirmar -->
+      <button type="button" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 rounded-lg"
+        onclick="alert('Senha alterada com sucesso!'); window.location.href='/PAGES/login.html';">
+        CONFIRMAR
+      </button>
+    </form>
+  </div>
+</body>
+</html>

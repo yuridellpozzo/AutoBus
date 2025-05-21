@@ -1,0 +1,102 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Passagem Comprada</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+        body {
+            background-color: #000000;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 100;
+            font-size: 6vw;
+            margin-bottom: 3rem;
+            line-height: 1.1;
+        }
+
+        p {
+            font-weight: 100;
+            font-size: 3vw;
+            margin-bottom: 4rem;
+            max-width: 900px;
+            line-height: 1.1;
+        }
+
+        button {
+            background-color: #ffdd00;
+            color: #252525;
+            font-weight: 800;
+            font-size: 1.125rem;
+            padding: 0.75rem 4rem;
+            border: none;
+            border-radius: 0.375rem;
+            transition: filter 0.3s ease;
+            width: 20vw;
+            max-width: 300px;
+        }
+
+        button:hover,
+        button:focus {
+            filter: brightness(90%);
+            outline: none;
+        }
+
+        .icon-ok {
+            width: 15vw;
+            max-width: 200px;
+            margin-bottom: 4rem;
+            fill: #ffdd00;
+            stroke: #ffdd00;
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 10vw;
+            }
+
+            p {
+                font-size: 5vw;
+            }
+
+            button {
+                width: 60vw;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .icon-ok {
+                width: 30vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>PASSAGEM COMPRADA !</h1>
+    <svg class="icon-ok" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"
+        aria-label="Ícone de círculo amarelo com um símbolo de check amarelo no centro, representando confirmação"
+        role="img">
+        <circle cx="32" cy="32" r="28" stroke-width="6" fill="none" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="6" fill="none" d="M20 34l10 10 18-26" />
+    </svg>
+    <p>ENVIAREMOS O PDF PARA SEU E-MAIL</p>
+    <a href="/PAGES/menu_principal.html">
+        <button type="button">OK</button>
+    </a>
+</body>
+
+</html>

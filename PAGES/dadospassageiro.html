@@ -1,0 +1,117 @@
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dados do Passageiro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Roboto Slab', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-between p-6">
+    <h1 class="text-[3.5rem] font-normal leading-tight max-w-full text-center mb-6 select-none">
+        INFORME OS DADOS DO PASSAGEIRO
+    </h1>
+
+    <form class="bg-white text-gray-900 rounded-3xl w-full max-w-4xl p-6 space-y-6" autocomplete="off">
+        <fieldset class="border border-gray-200 rounded-tl-3xl rounded-tr-3xl">
+            <legend class="font-semibold px-4 py-2 text-gray-900">
+                Dados de quem vai viajar
+            </legend>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 px-4 pb-6">
+                <div>
+                    <label for="nome" class="block mb-1 text-sm text-gray-700 font-normal">Nome completo</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-3 flex items-center text-purple-500"><i
+                                class="fas fa-user"></i></span>
+                        <input id="nome" name="nome" type="text" placeholder=""
+                            class="w-full rounded-full border border-gray-400 pl-10 pr-4 py-2 text-gray-700 placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                    </div>
+                </div>
+                <div>
+                    <label for="nascimento" class="block mb-1 text-sm text-gray-700 font-normal">Data de
+                        nascimento</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-3 flex items-center text-purple-500"><i
+                                class="fas fa-calendar-alt"></i></span>
+                        <input id="nascimento" name="nascimento" type="text" placeholder="dd/mm/aaaa"
+                            class="w-full rounded-full border border-gray-400 pl-10 pr-4 py-2 text-gray-400 placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                    </div>
+                </div>
+                <div>
+                    <label for="documento" class="block mb-1 text-sm text-gray-700 font-normal">Documento</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-3 flex items-center text-purple-500"><i
+                                class="fas fa-id-card-alt"></i></span>
+                        <select id="documento" name="documento"
+                            class="w-full rounded-full border border-gray-400 pl-10 pr-8 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <option>CPF</option>
+                        </select>
+                        <span class="absolute inset-y-0 right-3 flex items-center pointer-events-none text-gray-500"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <label for="numero" class="block mb-1 text-sm text-gray-700 font-normal">Número</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-3 flex items-center text-purple-500"><i
+                                class="fas fa-hashtag"></i></span>
+                        <input id="numero" name="numero" type="text" placeholder="___.___.___-__"
+                            class="w-full rounded-full border border-gray-400 pl-10 pr-4 py-2 text-gray-400 placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="border border-gray-200 rounded-bl-3xl rounded-br-3xl">
+            <legend class="font-semibold px-4 py-2 text-gray-900">
+                Para qual e-mail devemos enviar a passagem?
+            </legend>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 px-4 pb-6">
+                <div>
+                    <label for="email" class="block mb-1 text-sm text-gray-700 font-normal">E-mail</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-3 flex items-center text-purple-500"><i
+                                class="fas fa-envelope"></i></span>
+                        <input id="email" name="email" type="email" placeholder="nome@email.com"
+                            class="w-full rounded-full border border-gray-400 pl-10 pr-4 py-2 text-gray-700 placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                    </div>
+                </div>
+                <div>
+                    <label for="telefone" class="block mb-1 text-sm text-gray-700 font-normal">Telefone</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-3 flex items-center text-purple-500"><i
+                                class="fas fa-phone"></i></span>
+                        <input id="telefone" name="telefone" type="text" placeholder="(  _  ) ____-____"
+                            class="w-full rounded-full border border-gray-400 pl-10 pr-4 py-2 text-gray-400 placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" />
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <div class="w-full max-w-4xl flex justify-between mt-8 gap-4">
+        <a href="/PAGES/poltronas.html">
+            <button type="button"
+                class="flex items-center justify-center gap-3 bg-yellow-400 text-gray-900 font-extrabold text-xl rounded-md px-8 py-3 w-44 hover:bg-yellow-300 transition">
+                <i class="fas fa-arrow-left text-2xl"></i>
+                VOLTAR
+            </button>
+        </a>
+        <a href="/PAGES/pagamento.html">
+            <button type="submit" form="form"
+                class="bg-yellow-400 text-gray-900 font-extrabold text-xl rounded-md px-8 py-3 w-44 hover:bg-yellow-300 transition">
+                PAGAMENTO
+            </button>
+        </a>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Top Destinos</title>
+<style>
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background-color: #262626;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.7);
+    margin-bottom: 40px;
+  }
+
+  form button[type="submit"]:first-child {
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    color: black;
+    padding-left: 16px;
+    padding-right: 12px;
+    cursor: pointer;
+  }
+
+  form input[type="search"] {
+    border: none;
+    font-weight: 700;
+    font-size: 18px;
+    color: #b0b0b0;
+    padding: 12px 16px;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  form input[type="search"]::placeholder {
+    color: #b0b0b0;
+    font-weight: 700;
+  }
+
+  form button[type="submit"]:last-child {
+    background-color: #ffdb00;
+    color: black;
+    font-weight: 900;
+    font-size: 18px;
+    border-radius: 0 12px 12px 0;
+    border: none;
+    padding: 12px 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  form button[type="submit"]:last-child:hover {
+    background-color: #f0c800;
+  }
+
+  h1 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    font-size: 48px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    margin: 0 0 40px 0;
+  }
+
+  /* Specific styling for the section.destinos to display 3 inline in one row */
+  section.destinos {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  section.destinos::-webkit-scrollbar {
+    height: 8px;
+  }
+  section.destinos::-webkit-scrollbar-thumb {
+    background: rgba(255, 219, 0, 0.7);
+    border-radius: 4px;
+  }
+  section.destinos::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .destino {
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-width: 280px; /* decreased from 320px */
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .destino img {
+    width: 100%;
+    height: 224px; /* decreased from 256px */
+    object-fit: cover;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    display: block;
+}
+
+  .destino-info {
+    padding: 20px; /* decreased from 24px */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+
+  .destino-header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-bottom: 12px; /* decreased from 16px */
+  }
+
+  .destino-header h2 {
+    font-weight: 700;
+    font-size: 16px; /* decreased from 18px */
+    color: #4a5067;
+    margin: 0;
+  }
+
+  .destino-header span {
+    font-weight: 700;
+    font-size: 16px; /* decreased from 18px */
+    color: #4a5067;
+  }
+
+  .destino-footer {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 14px; /* decreased from 16px */
+    color: #4a5067;
+  }
+
+  .destino-footer i {
+    margin-right: 8px;
+    font-size: 16px; /* decreased from 18px */
+  }
+
+  .destino:hover {
+    transform: scale(0.5);
+  }
+  
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body style="">
+  <form role="search" aria-label="Pesquisar Cidades">
+    <button type="submit" aria-label="Ícone de busca"><i class="fas fa-search"></i></button>
+    <input type="search" placeholder="Pesquisar Cidades" aria-label="Pesquisar Cidades">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <h1>Top Destinos</h1>
+  <section class="destinos" aria-label="Lista de destinos" style="">
+    <article class="destino" aria-label="Destino Campo Verde, MT">
+      <img src="/IMAGENS/campoverde.jpg" alt="Campo Verde, MT, landmark tower with blue sky and palm trees" width="100%" height="100%">
+      <div class="destino-info" style="">
+        <div class="destino-header">
+          <h2>Campo Verde, MT</h2>
+          <span>R$50,00</span>
+        </div>
+        <div class="destino-footer" style="">
+          <i class="fas fa-paper-plane"></i> 2h 30min de Viagem
+        </div>
+      </div>
+    </article>
+
+    <article class="destino" aria-label="Destino Rondonópolis, MT">
+      <img src="/IMAGENS/Rondonopolis.jpg" alt="Rondonópolis, MT, city view with river and trees" width="100%" height="100%">
+      <div class="destino-info">
+        <div class="destino-header">
+          <h2>Rondonópolis, MT</h2>
+          <span>R$75,00</span>
+        </div>
+        <div class="destino-footer">
+          <i class="fas fa-paper-plane"></i> 5h 00min de Viagem
+        </div>
+      </div>
+    </article>
+
+    <article class="destino" aria-label="Destino Sinop, MT">
+      <img src="/IMAGENS/Sinop.jpg" alt="Sinop, MT, aerial view of city with roads and green areas" width="100%" height="100%">
+      <div class="destino-info">
+        <div class="destino-header">
+          <h2>Sinop, MT</h2>
+          <span>R$159,00</span>
+        </div>
+        <div class="destino-footer">
+          <i class="fas fa-paper-plane"></i> 7h 00min de Viagem
+        </div>
+      </div>
+    </article>
+  </section>
+    <Script>
+        const cardsDestinos = document.querySelectorAll('.destino');
+
+        cardsDestinos.forEach((card) => {
+            card.addEventListener('click', () => {
+                return window.location.href = '/PAGES/menu_principal.html';
+            });
+        });
+    </Script>
+</body>
+</html>

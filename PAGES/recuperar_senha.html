@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Recuperar Senha</title>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+  <div class="relative bg-gray-800 rounded-lg shadow-lg p-8 w-full max-w-md">
+    <!-- Botão de Voltar -->
+    <a href="/PAGES/login.html" class="absolute top-4 left-4 text-yellow-400 hover:text-yellow-500">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+
+    <!-- Título -->
+    <h1 class="text-2xl font-bold text-center mb-6">RECUPERAR SENHA</h1>
+
+    <!-- Formulário -->
+    <form class="space-y-4">
+      <!-- Campo de Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium mb-1">Informe o Email que corresponde à sua conta</label>
+        <input type="email" id="email" placeholder="Email Cadastrado" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400">
+      </div>
+      <button type="button" id="send-code" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 rounded-lg">
+        ENVIAR CÓDIGO
+      </button>
+
+      <!-- Campo de Código -->
+      <div>
+        <label for="codigo" class="block text-sm font-medium mb-1">Digite o Código enviado ao seu Email</label>
+        <input type="text" id="codigo" placeholder="Código" class="w-full px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400">
+      </div>
+      <button type="button" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 rounded-lg"
+        onclick="window.location.href='/PAGES/nova_senha.html'">
+        VERIFICAR
+      </button>
+    </form>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-gray-800 rounded-lg shadow-lg p-8 w-full max-w-sm text-center">
+      <h2 class="text-2xl font-bold mb-4">CÓDIGO ENVIADO AO E-MAIL</h2>
+      <div class="flex justify-center mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <button id="close-modal" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 rounded-lg">
+        OK
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Seleciona os elementos
+    const sendCodeButton = document.getElementById('send-code');
+    const modal = document.getElementById('modal');
+    const closeModalButton = document.getElementById('close-modal');
+
+    // Exibe o modal ao clicar no botão "ENVIAR CÓDIGO"
+    sendCodeButton.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+
+    // Fecha o modal ao clicar no botão "OK"
+    closeModalButton.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
